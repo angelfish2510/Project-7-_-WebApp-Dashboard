@@ -1,0 +1,42 @@
+.traffic,
+.daily,
+.mobile {
+    display: flex;
+    flex-direction: column;
+}
+
+.traffic-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+// .traffic-header,
+.traffic-nav {
+    display: flex;
+    // align-items: stretch;
+    justify-content: space-between;
+    // width: 95vw;
+}
+
+// .traffic-nav ul {
+//     padding: 0;
+// }
+
+.traffic-nav li {
+    list-style-type: none;
+}
+
+// .widget-container-full {
+//     margin: auto;
+//     height: 80vh;
+//     width: 95vw;
+// }
+
+
+#traffic-chart {
+    position: relative;
+    margin: auto;
+    height: 80vh;
+    width: 95vw;
+  }

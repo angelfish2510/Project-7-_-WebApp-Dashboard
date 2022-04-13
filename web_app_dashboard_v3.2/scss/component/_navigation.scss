@@ -1,0 +1,42 @@
+.header {
+    display: flex;
+    align-content: space-between;
+    width: 100%;
+    background-color: #9698cf;
+    color: white;
+}
+
+// .bell {
+//     width: 20%;
+// }
+
+.header img,
+.header svg {
+    width: 15%;
+}
+
+.sidebar-nav {
+    background-color: #484b9d;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 0px 20px 35px;
+}
+
+
+.nav-icons img,
+.nav-icons {
+    width: 40%;
+    height: 40%;
+    stroke: white;
+}
+
+.main-header {
+    display: flex;
+    flex-direction: row;
+}
+
+.tab {
+    background-color: grey;
+}

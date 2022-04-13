@@ -1,0 +1,28 @@
+.widget-container,
+.settings {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-area {
+    height: 100px;
+}
+
+// .form-field {
+//     height: 20px;
+//     font-size: .8em;
+//     line-height: .2em;
+// }
+
+.form-field,
+.form-area {
+    background-color: #F5F5F5;
+    border-radius: 5px;
+    padding-bottom: 20px;
+    margin: 5px 1px 3px 1px;
+}
+
+.settings {
+    border-top:  1px solid darkgrey;
+    justify-content: space-around;
+}

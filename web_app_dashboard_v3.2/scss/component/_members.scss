@@ -1,0 +1,50 @@
+.members {
+    border-top: 1px solid lightgrey;
+    margin-top: 8px;
+}
+
+.members h3,
+.activity h3 {
+    margin: 0;
+}
+
+.members-container,
+.activity-container {
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid lightgrey;
+    // height: 75px;
+    // padding: 3px;
+    // margin: 3px;
+    overflow: visible;
+    font-size: .9em;
+    line-height: .05em;
+}
+
+.members-container img,
+.activity-container img {
+    border-radius: 50%;
+    width: 15%;
+    height: 15%;
+    padding: 8px 0px 1px 0px;
+}
+
+.members-text,
+.activity-text {
+    font-size: .8em;
+    padding: 0;
+    text-align: center;
+}
+
+.members-text a {
+    text-decoration: none;
+    color: #7477BF;
+}
+
+.activity-text a {
+    text-decoration: none;
+    color: black;
+}
