@@ -1,31 +1,71 @@
+//create variable for min/max width
+
+
 .header {
-    display: flex;
-    align-content: space-between;
-    width: 100%;
-    background-color: #9698cf;
+    display: grid;
+    grid-template-columns: 1fr repeat(4, auto);
+    grid-column-gap: 5px;
+    background-color: #7977ba;
     color: white;
+    min-width: 100%;
+    max-height: 50px;
+    margin: 0px;
+    padding: 0px 10px;
+    align-content: center;
 }
 
-// .bell {
-//     width: 20%;
-// }
-
-.header img,
-.header svg {
-    width: 15%;
+    .site-name {
+        grid-column-start: 0;
 }
+
+
+
+.profile-image,
+.bell {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    align-self: center;
+    padding: 0px 10px 0px 10px;
+    // flex-shrink: 2;
+}
+
+.bell {
+    display: flex;
+    flex-direction: row;
+    border-right: 0.1px solid #dedede;
+    border-radius: 0px;
+    :hover {
+        background-color: #c9d6ff;
+        transition-duration: .35s;
+        border-radius: 50%;
+    }
+}
+
+.green-alert {
+    background-color: limegreen;
+    width: .5rem;
+    height: .5rem;
+    border-radius: 50%;
+}
+
+
+
 
 .sidebar-nav {
-    background-color: #484b9d;
+    background-color: #4d4c75;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
-    padding: 20px 0px 20px 35px;
+    justify-content: space-between;
+    min-width: 100%;
+    max-height: 50px;
+    // justify-content: center;
+    padding: 13px 0px 10px 30px;
+    // margin-bottom: -19px;
 }
 
 
-.nav-icons img,
 .nav-icons {
     width: 40%;
     height: 40%;
@@ -35,8 +75,57 @@
 .main-header {
     display: flex;
     flex-direction: row;
+    height: auto;
+    min-width: 100%;
+    padding: 0px 5px;
+    margin: 0px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headline {
+    margin: 0px;
+    font-size: 1.2rem;
 }
 
 .tab {
-    background-color: grey;
+    background-color: #F5F5F5;
+    border-bottom: 1.2px solid darkgray;
+    border-left: 1.2px solid darkgray;
+    width: 68%;
+    border-radius: 3px;
+    height: 3rem;
+}
+
+.alert {
+    display: flex;
+    justify-self: center;
+    justify-content: stretch;
+    color: white;
+    width: 95%;
+    margin: 10px 0px;
+}
+
+.alert-banner {
+    background-color: #9698cf;
+    display: flex;
+    // justify-self: center;
+    justify-content:space-between;
+    align-content: center;
+    width: 95%;
+    padding: 0px 8px;
+    margin: 0px;
+    line-height: .8em;
+    border-radius: 3px;
+}
+
+// .alert-banner-close {
+//     justify-self: flex-end;
+// }
+
+@media (min-width: 768px) {
+    .header-left,
+    .header-right {
+        display: flex;
+}
 }

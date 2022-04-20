@@ -1,3 +1,19 @@
+// alert banner
+
+const alertBanner = document.getElementById("alert");
+
+alertBanner.innerHTML = 
+  `<div class="alert-banner">
+    <p><strong>Alert:</strong> You have unread messages!</p>
+    <p class="alert-banner-close">x</p>
+  </div>`
+  alertBanner.addEventListener('click', e => {
+    const element = e.target;
+    if (element.classList.contains("alert-banner-close")) {
+      alertBanner.style.display = "none"
+    }
+  })
+
 // data for trafficChart
 let trafficData = {
     labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
@@ -175,9 +191,18 @@ new Chart('mobile-chart', {
 
 
 //send button
-const form = document.getElementById('userField');
-const input = form.getElementById('send');
+
+const form = document.getElementById('send-message');
+const user = form.querySelector('input');
+const message = form.querySelector('textarea');
+
 
 form.addEventListener('submit', (e) => {
-  console.log(input.value);
+  e.preventDefault();
+// if either field is empty prompt an error
+  if (user.value.length < 1  || message.value.length < 1 ) {
+    alert('Please ensure you have identified the recipient and provided the message you would like to submit.  Thank you!')
+  } else {
+  alert(`Your message has been submitted!`);
+  }
 })

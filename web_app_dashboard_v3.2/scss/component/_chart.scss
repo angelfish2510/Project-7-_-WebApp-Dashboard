@@ -1,8 +1,13 @@
+// canvas {
+//     max-width: 100%;
+// }
+
 .traffic,
 .daily,
 .mobile {
     display: flex;
     flex-direction: column;
+    border-bottom: 1px solid lightgrey;
 }
 
 .traffic-header {
