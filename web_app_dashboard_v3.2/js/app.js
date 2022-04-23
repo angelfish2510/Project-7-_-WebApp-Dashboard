@@ -14,111 +14,301 @@ alertBanner.innerHTML =
     }
   })
 
-// data for trafficChart
-let trafficData = {
-    labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
-    datasets: [{
-        data: [700, 1350, 1000, 2000, 1500, 1700, 1390, 1879, 2207, 1500, 2500],
-        // label: "null",
-      backgroundColor: "rgba(230, 230, 250, 1)",
-      borderColor: "rgba(169,169,169,1)",
-      borderWidth: .5,
-      lineTension: .5,
-      radius: 1.2
-    //   hoverBackgroundColor: "rgba(255,99,132,0.4)",
-    //   hoverBorderColor: "rgba(255,99,132,1)",
+// Line Chart
+// Variables for traffic-nav
 
-    }]
-  };
+const trafficNav = document.querySelectorAll('.traffic-nav');
+const trafficNavLinks = document.querySelectorAll('.traffic-nav-link');
+const trafficChart = document.querySelector('#traffic-chart').getContext('2d');
 
-  // hourly data for trafficChart
-  let hourlyData = {
+// hourly data for trafficChart
+  const hourly = {
     labels: ["5-6am", "6-7am", "7-8am", "8-9am", "9-10am", "10-11am", "11-noon", "12-1pm", "1-2pm", "2-3pm", "3-4pm"],
     datasets: [{
-        data: [12, 130, 1000, 900, 1200, 1350, 300, 1500, 1375, 150, 900],
-    }]
-  };
-
-  // weekly data for trafficChart
-  let weeklyData = {
-    labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
-    datasets: [{
-        data: [1200, 13000, 100000, 90000, 120000, 135000, 30000, 150000, 137500, 15000, 90000, 25000],
-    }]
-  };
-
-  // monthly data for trafficChart
-  let monthlyData = {
-    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-    datasets: [{
-        data: [7200000, 4300000, 100000000, 90000, 1200000, 1350000, 30000, 150000, 13750000, 1500, 90000],
-    }]
-  };
-
-// options for trafficChart
-  let trafficOptions = {
-    // backgroundColor: 'rgba(255,69,0,.9)',
-    // maintainAspectRatio: false,
-    fill: true,
-    aspectRatio: 2.5,
-    animation: {
+        data: [12, 13, 10, 9, 12, 13, 3, 1, 13, 15, 9],
+        backgroundColor: "rgba(171, 169, 212, .5)",
+        borderWidth: 2,
+        borderColor: "rgba(161, 161, 165, .3)", 
+        lineTension: .25,
+        radius: 1.9,
+    }],
+    options: {
+      backgroundColor: 'rgba(255,69,0,.4)',
+      responsive: true,
+      maintainAspectRation: false,
+      // aspectRatio: 1,
+      fill: true,
+      animation: {
         duration: 0
-    },
-    scales: {
-      y: {
-        // stacked: true,
-        beginAtZero: true,
-        // grid: {
-        //   display: true,
-        //   color: "rgba(204,204,255,.2)"
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          // min: 0,
+          max: 25,
+          grid: {
+            display: true,
+            color: "rgba(204,204,255,.4)",
+          },
+          ticks: {
+            // maxRotation: 90,
+            // minRotation: 180,
+            stepSize: 5,
+            color: "rgb(36,36,36)",
+          },
         },
-      x:  {
-        ticks: {
-          // maxRotation: 90,
-          // minRotation: 180
-        }
+        x: {
+          ticks: {
+            color: "rgb(58,58,58)",
+          },
+        },
       },
       plugins: {
-          legend: {
-              display: false
-          }
-      }
+        legend: {
+          display: false,
+        },
+      },
     }
   };
 
-//   let trafficChart = new Chart(trafficCanvas, {
-//       type: 'line',
-//       data: trafficData,
-//       options: trafficOptions
-//   });
-  
-//create trafficChart
-  new Chart('traffic-chart', {
+   // daily data for trafficChart
+
+  const daily = {
+    labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+    datasets: [{
+        data: [120, 130, 100, 90, 120, 135, 30],
+        backgroundColor: "rgba(171, 169, 212, .5)",
+        borderWidth: 2,
+        borderColor: "rgba(161, 161, 165, .3)", 
+        lineTension: .25,
+        radius: 1.9,
+    }],
+    options: {
+      backgroundColor: 'rgba(255,69,0,.4)',
+      responsive: true,
+      maintainAspectRation: false,
+      // aspectRatio: 1,
+      fill: true,
+      animation: {
+        duration: 0
+      },
+      scales: {
+        y: {
+          max: 150,
+          beginAtZero: true,
+          // min: 0,
+          ticks: {
+            // maxRotation: 90,
+            // minRotation: 180,
+            stepSize: 25,
+            color: "rgb(36,36,36)",
+          },
+          grid: {
+            display: true,
+            color: "rgba(204,204,255,.4)",
+          },
+        },
+        x: {
+          ticks: {
+            color: "rgb(58,58,58)",
+          },
+        },
+      },
+      plugins: {
+        legend: {
+          display: false,
+        },
+      },
+    }
+  };
+
+  // weekly data for trafficChart
+
+  const weekly = {
+    labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
+    datasets: [{
+        // data: [1200, 13000, 100000, 90000, 120000, 135000, 30000, 150000, 137500, 15000, 90000, 25000],
+         data: [1200, 1300, 1000, 900, 1200, 1350, 550, 1500, 1375, 1500, 900, 2500],
+         backgroundColor: "rgba(171, 169, 212, .5)",
+         borderWidth: 2,
+         borderColor: "rgba(161, 161, 165, .3)", 
+         lineTension: .25,
+         radius: 1.9,
+     }],
+     options: {
+       backgroundColor: 'rgba(255,69,0,.4)',
+       responsive: true,
+       maintainAspectRation: false,
+       // aspectRatio: 1,
+       fill: true,
+       animation: {
+         duration: 0
+       },
+       scales: {
+         y: {
+           max: 1500,
+           beginAtZero: true,
+           // min: 0,
+           ticks: {
+             // maxRotation: 90,
+             // minRotation: 180,
+             stepSize: 250,
+             color: "rgb(36,36,36)",
+           },
+           grid: {
+             display: true,
+             color: "rgba(204,204,255,.4)",
+           },
+         },
+         x: {
+           ticks: {
+             color: "rgb(58,58,58)",
+           },
+         },
+       },
+       plugins: {
+         legend: {
+           display: false,
+         },
+       },
+     }
+   };
+ 
+
+  // monthly data for trafficChart
+
+  const monthly = {
+   labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    datasets: [{
+        data: [720, 430, 1000, 900, 1200, 1350, 3000, 1500, 1375, 1500, 900, 670],
+        backgroundColor: "rgba(171, 169, 212, .5)",
+        borderWidth: 2,
+        borderColor: "rgba(161, 161, 165, .3)", 
+        lineTension: .25,
+        radius: 1.9,
+    }],
+    options: {
+      backgroundColor: 'rgba(255,69,0,.4)',
+      responsive: true,
+      maintainAspectRation: false,
+      // aspectRatio: 1,
+      fill: true,
+      animation: {
+        duration: 0
+      },
+      scales: {
+        y: {
+          max: 3000,
+          beginAtZero: true,
+          // min: 0,
+          ticks: {
+            // maxRotation: 90,
+            // minRotation: 180,
+            stepSize: 500,
+            color: "rgb(36,36,36)",
+          },
+          grid: {
+            display: true,
+            color: "rgba(204,204,255,.4)",
+          },
+        },
+        x: {
+          ticks: {
+            color: "rgb(58,58,58)",
+          },
+        },
+      },
+      plugins: {
+        legend: {
+          display: false,
+        },
+      },
+    }
+  };
+
+
+// variables for line chart nav
+
+const trafficHourlyLabel = hourly.labels;
+const trafficHourlyData = hourly.datasets;
+const trafficHourlyOptions = hourly.options;
+
+const trafficDailyLabel = daily.labels;
+const trafficDailyData = daily.datasets;
+const trafficDailyOptions = daily.options;
+
+const trafficWeeklyLabel = weekly.labels;
+const trafficWeeklyData = weekly.datasets;
+const trafficWeeklyOptions = weekly.options;
+
+const trafficMonthlyLabel = monthly.labels;
+const trafficMonthlyData = monthly.datasets;
+const trafficMonthlyOptions = monthly.options;
+
+const defaultLabels = weekly.labels;
+const defaultDataSets = weekly.datasets;
+const defaultOptions = weekly.options;
+
+// create line chart
+
+function createTrafficLineChart(labels, data, options) {
+  trafficLine = new Chart(trafficChart, {
     type: 'line',
-    options: trafficOptions,
-    data: trafficData
+    data: {
+      labels: labels,
+      datasets: data,
+    },
+    options: options,
+  })
+};
+
+createTrafficLineChart(defaultLabels, defaultDataSets, defaultOptions);
+
+// select period of data to display - traffic nav
+
+
+
+trafficNavLinks.forEach(item => {
+  item.addEventListener('click', (e) => {
+
+    
+let navLinkActive = e.target;
+
+    for (i = 0; i < trafficNavLinks.length; i++) {
+      trafficNavLinks[i].classList.remove('active');
+    };
+  
+    if (navLinkActive.innerText === 'Hourly') {
+      trafficLine.data.labels = trafficHourlyLabel;
+      trafficLine.data.datasets = trafficHourlyData;
+      trafficLine.data.options = trafficHourlyOptions;
+      trafficLine.update();
+      navLinkActive.classList.add('active');
+    } else if (navLinkActive.innerText === 'Daily') {
+      trafficLine.data.labels = trafficDailyLabel;
+      trafficLine.data.datasets = trafficDailyData;
+      trafficLine.data.options = trafficDailyOptions;
+      trafficLine.update();
+      navLinkActive.classList.add('active');
+    } else if (navLinkActive.innerText === 'Weekly') {
+      trafficLine.data.labels = trafficWeeklyLabel;
+      trafficLine.data.datasets = trafficWeeklyData;
+      trafficLine.data.options = trafficWeeklyOptions;
+      trafficLine.update();
+      navLinkActive.classList.add('active');
+    } else {
+      trafficLine.data.labels = trafficMonthlyLabel;
+      trafficLine.data.datasets = trafficMonthlyData;
+      trafficLine.data.options = trafficMonthlyOptions;
+      trafficLine.update();
+      navLinkActive.classList.add('active');
+    }
   });
+})
 
-// const lineChart = new Chart(ctx, {
-//     type: 'line',
-//     data: data,
-// });
+ 
 
-
-
-// const labels = 
-
-// const data =
-
-// const config =
-
-// const myChart=new Chart(
-//     ctx,
-//     config
-// );
-
-
-// data for dailyChart
+// data for dailyChart - bar
 const dailyData = {
     labels: ["Su", "M", "T", "W", "R", "F", "Sa"],
     datasets: [{
@@ -144,7 +334,7 @@ const dailyOptions = {
     }
 };
 
-//create dailyChart
+//create dailyChart - bar
 new Chart('daily-chart', {
     type: 'bar',
     options: dailyOptions,
@@ -152,20 +342,21 @@ new Chart('daily-chart', {
   });
 
 
-  // data for mobileChart
+  // data for mobileChart - doughnut
 const mobileData = {
     labels: ["Desktop", "Tablet", "Phones"],
     datasets: [{
         label: "Device",
         data: [4000, 1250, 1200],
-        // background: '#7477BF',
+        // borderWidth: 0,
         backgroundColor: [
             '#7477BF',
             '#78CF82',
             '#51B6C8'
         ],
-        // borderWidth: 1
+
     }]
+    
 };
 
 const mobileOptions = {
@@ -175,14 +366,14 @@ const mobileOptions = {
         legend: {
             position: 'right',
             labels: {
-                boxWidth: 18,
+                boxWidth: 20,
                 fontStyle: 'bold'
             }
         }
     }
 };
 
-//create mobileChart
+//create mobileChart - doughnut
 new Chart('mobile-chart', {
     type: 'doughnut',
     options: mobileOptions,
@@ -206,3 +397,13 @@ form.addEventListener('submit', (e) => {
   alert(`Your message has been submitted!`);
   }
 })
+
+
+
+// const trafficNav2 = document.querySelector('.traffic-nav');
+// trafficNav2.addEventListener('click', (e) => {
+//   let navActive = e.target;
+//   if (navActive.tagName === "LI") {
+//     navActive.className = "active";
+//   }
+// })

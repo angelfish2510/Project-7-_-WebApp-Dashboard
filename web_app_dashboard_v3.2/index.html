@@ -85,16 +85,29 @@
                     <h3>Traffic</h3>
                     <ul class="traffic-nav">
                         <!-- js will be applied here for actual navigation -->
-                        <li class="traffic-nav-link">Hourly</li>
-                        <li class="traffic-nav-link">Daily</li>
-                        <li class="traffic-nav-link active">Weekly</li>
-                        <li class="traffic-nav-link">Monthly</li>
+                        <li class="traffic-nav-link">Hourly
+                            <!-- <button type="button" class="hourly_btn" id="btnHourly">Hourly</button> -->
+                        </li>
+                        <li class="traffic-nav-link">Daily
+                            <!-- <button type="button" class="daily_btn" id="btnDaily">Daily</button> -->
+                        </li>
+                        <li class="traffic-nav-link active">Weekly
+                            <!-- <button type="button" class="weekly_btn" id="btnWeekly">Weekly</button> -->
+                        </li>
+                        <li class="traffic-nav-link">Monthly
+                            <!-- <button type="button" class="monthly_btn" id="btnMonthly">Monthly</button> -->
+                        </li>
                     </ul>
                 </div>
-                <div class="widget-container-full" style="position: relative; height: 15vh; width: 40vw">
+                
+                <div class="widget-container-full" >
                     <!-- element line graph will attach to -->
-                    <canvas id="traffic-chart" aria-label="Line chart displaying traffic" role="img"></canvas>
+                    <canvas id="traffic-chart"></canvas>
                 </div>
+                <!-- <div class="widget-container-full" style="position: relative; height: 15vh; width: 40vw"> -->
+                    <!-- element line graph will attach to -->
+                    <!-- <canvas id="traffic-chart" aria-label="Line chart displaying traffic" role="img"></canvas>
+                </div> -->
             </section>
 
             <section class="daily">

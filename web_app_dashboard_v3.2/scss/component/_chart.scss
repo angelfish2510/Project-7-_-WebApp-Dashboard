@@ -16,32 +16,23 @@
     justify-content: center;
 }
 
-// .traffic-header,
-.traffic-nav {
-    display: flex;
-    // align-items: stretch;
-    justify-content: space-between;
-    // width: 95vw;
-}
-
-// .traffic-nav ul {
-//     padding: 0;
-// }
-
-.traffic-nav li {
-    list-style-type: none;
-}
-
-// .widget-container-full {
-//     margin: auto;
-//     height: 80vh;
-//     width: 95vw;
-// }
-
-
-#traffic-chart {
+.widget-container-full {
     position: relative;
-    margin: auto;
-    height: 80vh;
-    width: 95vw;
-  }
+    height: 200px;
+    width: 320px;
+    // padding: 0px;
+    // margin: 0px;
+    // margin: auto;
+
+}
+
+
+
+// #traffic-chart {
+//     // position: absolute;
+//     // margin: auto;
+//     // height: 300px;
+//     // width: 250px;
+//     // margin-left: -40px;
+
+//   }
