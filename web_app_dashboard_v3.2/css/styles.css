@@ -70,6 +70,12 @@
   width: 320px;
 }
 
+.widget-container-half {
+  position: relative;
+  height: 200px;
+  width: 320px;
+}
+
 .widget-container,
 .settings {
   display: flex;

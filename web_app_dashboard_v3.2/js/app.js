@@ -25,7 +25,7 @@ const trafficChart = document.querySelector('#traffic-chart').getContext('2d');
   const hourly = {
     labels: ["5-6am", "6-7am", "7-8am", "8-9am", "9-10am", "10-11am", "11-noon", "12-1pm", "1-2pm", "2-3pm", "3-4pm"],
     datasets: [{
-        data: [12, 13, 10, 9, 12, 13, 3, 1, 13, 15, 9],
+        data: [1, 3, 18, 23, 4, 7, 3, 24, 13, 15, 22],
         backgroundColor: "rgba(171, 169, 212, .5)",
         borderWidth: 2,
         borderColor: "rgba(161, 161, 165, .3)", 
@@ -76,7 +76,7 @@ const trafficChart = document.querySelector('#traffic-chart').getContext('2d');
   const daily = {
     labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
     datasets: [{
-        data: [120, 130, 100, 90, 120, 135, 30],
+        data: [112, 20, 80, 40, 70, 135, 147],
         backgroundColor: "rgba(171, 169, 212, .5)",
         borderWidth: 2,
         borderColor: "rgba(161, 161, 165, .3)", 
@@ -128,7 +128,7 @@ const trafficChart = document.querySelector('#traffic-chart').getContext('2d');
     labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
     datasets: [{
         // data: [1200, 13000, 100000, 90000, 120000, 135000, 30000, 150000, 137500, 15000, 90000, 25000],
-         data: [1200, 1300, 1000, 900, 1200, 1350, 550, 1500, 1375, 1500, 900, 2500],
+         data: [400, 750, 1000, 900, 1200, 1350, 850, 974, 1015, 1300, 1410, 1500],
          backgroundColor: "rgba(171, 169, 212, .5)",
          borderWidth: 2,
          borderColor: "rgba(161, 161, 165, .3)", 
@@ -180,7 +180,7 @@ const trafficChart = document.querySelector('#traffic-chart').getContext('2d');
   const monthly = {
    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
     datasets: [{
-        data: [720, 430, 1000, 900, 1200, 1350, 3000, 1500, 1375, 1500, 900, 670],
+        data: [720, 430, 1000, 1200, 1400, 1350, 1700, 2000, 2505, 1500, 900, 670],
         backgroundColor: "rgba(171, 169, 212, .5)",
         borderWidth: 2,
         borderColor: "rgba(161, 161, 165, .3)", 
@@ -198,7 +198,7 @@ const trafficChart = document.querySelector('#traffic-chart').getContext('2d');
       },
       scales: {
         y: {
-          max: 3000,
+          max: 2500,
           beginAtZero: true,
           // min: 0,
           ticks: {
@@ -232,26 +232,31 @@ const trafficChart = document.querySelector('#traffic-chart').getContext('2d');
 const trafficHourlyLabel = hourly.labels;
 const trafficHourlyData = hourly.datasets;
 const trafficHourlyOptions = hourly.options;
+const trafficHourlyScales = hourly.options.scales;
 
 const trafficDailyLabel = daily.labels;
 const trafficDailyData = daily.datasets;
 const trafficDailyOptions = daily.options;
+const trafficDailyScales = daily.options.scales;
 
 const trafficWeeklyLabel = weekly.labels;
 const trafficWeeklyData = weekly.datasets;
 const trafficWeeklyOptions = weekly.options;
+const trafficWeeklyScales = weekly.options.scales;
 
 const trafficMonthlyLabel = monthly.labels;
 const trafficMonthlyData = monthly.datasets;
 const trafficMonthlyOptions = monthly.options;
+const trafficMonthlyScales = monthly.options.scales;
 
-const defaultLabels = weekly.labels;
-const defaultDataSets = weekly.datasets;
-const defaultOptions = weekly.options;
+const defaultLabel = monthly.labels;
+const defaultData = monthly.datasets;
+const defaultOptions = monthly.options;
+const defaultScales = monthly.options.scales;
 
 // create line chart
 
-function createTrafficLineChart(labels, data, options) {
+function createTrafficLineChart(labels, data, options, scales) {
   trafficLine = new Chart(trafficChart, {
     type: 'line',
     data: {
@@ -262,11 +267,9 @@ function createTrafficLineChart(labels, data, options) {
   })
 };
 
-createTrafficLineChart(defaultLabels, defaultDataSets, defaultOptions);
+createTrafficLineChart(defaultLabel, defaultData, defaultOptions, defaultScales);
 
 // select period of data to display - traffic nav
-
-
 
 trafficNavLinks.forEach(item => {
   item.addEventListener('click', (e) => {
@@ -279,34 +282,29 @@ let navLinkActive = e.target;
     };
   
     if (navLinkActive.innerText === 'Hourly') {
-      trafficLine.data.labels = trafficHourlyLabel;
-      trafficLine.data.datasets = trafficHourlyData;
-      trafficLine.data.options = trafficHourlyOptions;
+      trafficLine.destroy();
+      createTrafficLineChart(trafficHourlyLabel, trafficHourlyData, trafficHourlyOptions, trafficHourlyScales);
       trafficLine.update();
       navLinkActive.classList.add('active');
     } else if (navLinkActive.innerText === 'Daily') {
-      trafficLine.data.labels = trafficDailyLabel;
-      trafficLine.data.datasets = trafficDailyData;
-      trafficLine.data.options = trafficDailyOptions;
+      trafficLine.destroy();
+      createTrafficLineChart(trafficDailyLabel, trafficDailyData, trafficDailyOptions, trafficDailyScales);
       trafficLine.update();
       navLinkActive.classList.add('active');
     } else if (navLinkActive.innerText === 'Weekly') {
-      trafficLine.data.labels = trafficWeeklyLabel;
-      trafficLine.data.datasets = trafficWeeklyData;
-      trafficLine.data.options = trafficWeeklyOptions;
+      trafficLine.destroy();
+      createTrafficLineChart(trafficWeeklyLabel, trafficWeeklyData, trafficWeeklyOptions, trafficWeeklyScales);
       trafficLine.update();
       navLinkActive.classList.add('active');
     } else {
-      trafficLine.data.labels = trafficMonthlyLabel;
-      trafficLine.data.datasets = trafficMonthlyData;
-      trafficLine.data.options = trafficMonthlyOptions;
+      trafficLine.destroy();
+      createTrafficLineChart(trafficMonthlyLabel, trafficMonthlyData, trafficMonthlyOptions, trafficMonthlyScales);
       trafficLine.update();
       navLinkActive.classList.add('active');
     }
   });
 })
 
- 
 
 // data for dailyChart - bar
 const dailyData = {

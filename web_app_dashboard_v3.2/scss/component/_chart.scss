@@ -26,7 +26,11 @@
 
 }
 
-
+.widget-container-half {
+    position: relative;
+    height: 200px;
+    width: 320px;
+}
 
 // #traffic-chart {
 //     // position: absolute;
@@ -36,3 +40,15 @@
 //     // margin-left: -40px;
 
 //   }
+
+
+@media (min-width: 768px) {
+    .widget-container-half {
+
+    }
+
+    // .daily,
+    // .mobile {
+    //     flex-direction: row;
+    // }
+}
