@@ -378,7 +378,6 @@ new Chart('mobile-chart', {
     data: mobileData
   });
 
-
 //send button
 
 const form = document.getElementById('send-message');
@@ -396,12 +395,41 @@ form.addEventListener('submit', (e) => {
   }
 })
 
+// Settings - toggle switches and dropdown with save/cancel functionality
 
+const emailToggle = document.querySelector('#toggleEmail');
+const publicToggle = document.querySelector('#togglePublic');
+const timezoneSet = document.querySelector('#timezone');
+const saveButton = document.querySelector('#save');
+const cancelButton = document.querySelector('#cancel');
+let localStorage = window.localStorage;
 
-// const trafficNav2 = document.querySelector('.traffic-nav');
-// trafficNav2.addEventListener('click', (e) => {
-//   let navActive = e.target;
-//   if (navActive.tagName === "LI") {
-//     navActive.className = "active";
-//   }
-// })
+window.onload = function () {
+  if (localStorage.emailToggle == "true") {
+    emailToggle.checked = true;
+  } else {
+    emailToggle.checked = false;
+  }
+  if (localStorage.publicToggle == "true") {
+    publicToggle.checked = true;
+  } else {
+    publicToggle.checked = false;
+  }
+  if (localStorage.timezoneSet != null) {
+    timezoneSet.value = localStorage.timezoneSet;
+  }
+};
+
+saveButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  localStorage.setItem("emailToggle", emailToggle.checked);
+  localStorage.setItem("publicToggle", publicToggle.checked);
+  localStorage.setItem("timezoneSet", timezoneSet.value);
+  alert("Your settings are saved and ready for your return!  Come back soon!")
+});
+
+cancelButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  localStorage.clear();
+  alert("Your settings have been cancelled.  It's like you were never here and have no opinions on the matter. :)")
+});

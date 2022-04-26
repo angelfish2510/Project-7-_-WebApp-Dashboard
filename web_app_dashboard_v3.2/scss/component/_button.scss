@@ -33,6 +33,53 @@
     color: white;
 }
 
+  
+// .settings {
+//     display: flex;
+// }
+
+// .toggle {
+//     display: flex;
+//     flex-direction: row;
+//     margin: auto;
+//     max-width: 100%;
+//     align-items: center;
+//     // overflow: visible;
+//     // justify-content: space-between;
+//     // max-width: 320px;
+// }
+
+.switch-light.switch-ios {
+    display: flex;
+    width: 100%;
+    min-width: 100%;
+    align-items: center;
+    // justify-content: stretch;
+    margin-bottom: 20px;
+}
+
+.switch-ios.switch-light span {
+    flex-basis: 105px;
+}
+
+.switch-ios.switch-light a {
+   align-content: stretch;
+}
+
+.switch-ios.switch-light strong {
+    flex-basis: 200px;
+}
+
+// .switch-candy a {
+//     background-color: red;
+// }
+
+// #toggleEmail,
+// #togglePublic {
+//     display: flex;
+//     flex-direction: row;
+// }
+
 
 .button-primary,
 #save {

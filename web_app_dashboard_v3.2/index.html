@@ -221,7 +221,7 @@
                             <a href="#"><strong>WebApp's SEO Tips</strong></a>
                         </p>
                         </div>
-                    <p>4 hours ago</p>
+                    <p class="recent">4 hours ago</p>
                 </div>
 
                 <div class="activity-container">
@@ -231,7 +231,7 @@
                             <a href="#"><strong>Facebook's Changes for 2021</strong></a>
                         </p>
                     </div>
-                    <p>5 hours ago</p>
+                    <p class="recent">5 hours ago</p>
                 </div>
 
                 <div class="activity-container">
@@ -241,7 +241,7 @@
                             <a href="#"><strong>Facebook's Changes for 2021</strong></a>
                         </p>
                     </div>
-                    <p>5 hours ago</p>
+                    <p class="recent">5 hours ago</p>
                 </div>
 
                 <div class="activity-container">
@@ -251,7 +251,7 @@
                             <a href="#"><strong>WebApp's SEO Tips</strong></a>
                         </p>
                     </div>
-                    <p>1 day ago</p>
+                    <p class="recent">1 day ago</p>
                 </div>
             </section>
 
@@ -271,9 +271,30 @@
 
             <section class="settings">
                 <h3>Settings</h3>
-                <p>toggle placeholder</p>
-                <!-- custom toggle code -->
-                <!-- custom toggle code -->
+                <div class="toggle">
+                    <!-- <p>Send Email Notifications</p> -->
+                    <label class="switch-light switch-ios" onclick="">
+                    <input type="checkbox" id="toggleEmail">
+                        <strong>Send Email Notifications</strong>
+                        <span>
+                            <span>OFF</span>
+                            <span>ON</span>
+                            <a></a>
+                        </span>
+                    </label>
+                </div>
+                <div class="toggle">
+                    <!-- <p>Set Profile to Public</p> -->
+                    <label class="switch-light switch-ios" onclick="">
+                    <input type="checkbox" id="togglePublic">
+                        <strong>Set Profile to Public</strong>
+                        <span>
+                            <span>OFF</span>
+                            <span>ON</span>
+                        <a></a>
+                        </span>
+                    </label>
+                </div>
                 <select class="form-field" id="timezone">
                     <option disabled selected>Select a Timezone</option>
                     <option>EST</option>
