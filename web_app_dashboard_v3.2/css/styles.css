@@ -110,9 +110,25 @@
 .form-field,
 .form-area {
   background-color: #F5F5F5;
-  border-radius: 5px;
+  width: 95%;
+  border-color: #767676;
+  border-radius: 5px 5px 0 0;
   padding-bottom: 20px;
   margin: 5px 1px 3px 1px;
+}
+
+.listSuggestions {
+  list-style: none;
+  margin: -0.15rem 1px 10px 0px;
+  width: 95%;
+  border: 1px solid #767676;
+  border-radius: 0 0 5px 5px;
+  padding-left: 5px;
+  background-color: #F5F5F5;
+}
+
+.list-items:hover {
+  background-color: #767676;
 }
 
 .settings {

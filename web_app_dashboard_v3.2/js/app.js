@@ -378,6 +378,53 @@ new Chart('mobile-chart', {
     data: mobileData
   });
 
+// autocomplete user text field
+
+let userNames = ["Aussie", "Lily Pilly", "Guanabanita", "Razzleberry", "Muntry", "Guanabana", "Sprig", "Lava", "Sapphire", "Fifi", "Aquasparta", "Vesuvius", "Franklin", "Willy Wonka Wigglepants Kazam", "Prince Charming", "Beezra", "Mr. Truffe", "Snow White", "DaNiece", "Nestle Chocolate Chip", "Chit", "Raven", "Cloud", "Sunrise", "Marble", "Lickorice", "Grover", "Hazel", "Orchid",];
+let sortedNames = userNames.sort();
+
+let userInput = document.getElementById('userField');
+
+userInput.addEventListener("keyup", (e) => {
+  // loop through above array
+      // Initially remove all elements (so if suer erases a letter or adds new letter then clean previous outputs)
+    removeElements();
+    // const listDisplay = document.getElementsByClassName('.listSuggestions');
+    // listDisplay.style.visibility="visible";
+  for (let i of sortedNames){
+    // convert input to lowercase and compare with each string
+
+    if (i.toLowerCase().startsWith(userInput.value.toLowerCase()) && userInput.value != "") {
+      // create li Element
+      let listItem = document.createElement("li");
+      // One common class name
+      listItem.classList.add("list-items");
+      listItem.style.cursor = "pointer";
+      listItem.setAttribute("onClick", "displayNames('"+i+"')");
+      // Display matched part in bold
+      let word = "<b>" + i.substr(0,userInput.value.length) + "</b>";
+      word += i.substr(userInput.value.length);
+      // display the value in array
+      listItem.innerHTML = word;
+      document.querySelector(".listSuggestions").appendChild(listItem);
+    }
+  }
+});
+
+function displayNames(value) {
+  userInput.value = value;
+  removeElements();
+}
+
+function removeElements(){
+  // clear all the items
+  let items = document.querySelectorAll(".list-items");
+  items.forEach((item) => {
+    item.remove();
+  })
+}
+
+
 //send button
 
 const form = document.getElementById('send-message');
