@@ -1,3 +1,35 @@
+// alert icon
+
+let alertListUl = document.getElementById('alertListUl');
+let bellSVG = document.getElementById('bell-icon');
+let show;
+
+bellSVG.addEventListener('click', () => {
+  if (show) {
+    alertListUl.className = "activeAlert";
+    show = false;
+  } else {
+    alertListUl.className = "activeAlert display-alerts";
+    show = true;
+  }
+});
+
+let alertClear = document.querySelectorAll('.alert-clear');
+let activeAlerts = alertClear.length;
+let greenAlert = document.getElementById('green-alert');
+
+for (let i=0; i<alertClear.length; i++) {
+  alertClear[i].addEventListener('click', (e) => {
+    let alert = e.target;
+    alert.parentNode.style.display = 'none';
+    activeAlerts--;
+    if (activeAlerts == 0) {
+      greenAlert.style.display= 'none';
+      // alertBox.style.display = 'none';
+    }
+  });
+}
+
 // alert banner
 
 const alertBanner = document.getElementById("alert");
