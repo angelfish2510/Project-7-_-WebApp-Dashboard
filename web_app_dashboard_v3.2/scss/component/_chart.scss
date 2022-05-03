@@ -5,6 +5,7 @@
 .traffic,
 .daily,
 .mobile {
+    padding: 0px 10px;
     display: flex;
     flex-direction: column;
     border-bottom: 1px solid lightgrey;
@@ -19,7 +20,7 @@
 .widget-container-full {
     position: relative;
     height: 200px;
-    width: 320px;
+    width: 300px;
     // padding: 0px;
     // margin: 0px;
     // margin: auto;
@@ -29,7 +30,7 @@
 .widget-container-half {
     position: relative;
     height: 200px;
-    width: 320px;
+    width: 300px;
 }
 
 // #traffic-chart {
@@ -43,8 +44,10 @@
 
 
 @media (min-width: 768px) {
-    .widget-container-half {
-
+    .widget-container-full {
+        width: 600px;
+        height: 280px;
+        margin-left: 50px;
     }
 
 }
