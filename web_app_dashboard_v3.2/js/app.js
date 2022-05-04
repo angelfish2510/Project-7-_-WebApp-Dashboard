@@ -416,6 +416,7 @@ let userNames = ["Aussie", "Lily Pilly", "Guanabanita", "Razzleberry", "Muntry",
 let sortedNames = userNames.sort();
 
 let userInput = document.getElementById('userField');
+const suggestedNames = document.querySelector('.listSuggestions');
 
 userInput.addEventListener("keyup", (e) => {
   // loop through above array
@@ -428,6 +429,7 @@ userInput.addEventListener("keyup", (e) => {
 
     if (i.toLowerCase().startsWith(userInput.value.toLowerCase()) && userInput.value != "") {
       // create li Element
+      suggestedNames.style.display = "block";
       let listItem = document.createElement("li");
       // One common class name
       listItem.classList.add("list-items");

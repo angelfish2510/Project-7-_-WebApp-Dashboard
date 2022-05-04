@@ -55,7 +55,7 @@
   border-radius: 5px;
   margin-bottom: 10px;
   color: #FFF;
-  width: 90%;
+  width: 96%;
   align-self: center;
 }
 
@@ -126,7 +126,8 @@
   flex-direction: column;
 }
 
-.message h3 {
+.message h3,
+.settings h3 {
   margin: 0;
   padding: 0px 10px;
 }
@@ -135,10 +136,10 @@
 .form-area {
   align-self: center;
   background-color: #F5F5F5;
-  width: 90%;
+  width: 95%;
   border-color: #767676;
   border-radius: 5px 5px 0 0;
-  margin: 5px 1px 3px 1px;
+  margin: 5px 1px 12px 1px;
   line-height: 3em;
 }
 
@@ -147,19 +148,14 @@
   margin-bottom: 15px;
 }
 
-#send-message {
-  margin: 10px;
-}
-
 .listSuggestions {
   list-style: none;
-  margin: -0.15rem 1px 10px 0px;
+  margin-top: -0.2rem;
   align-self: center;
-  width: 90%;
-  border: 1px solid #767676;
-  border-radius: 0 0 5px 5px;
+  width: 96%;
   padding-left: 5px;
   background-color: #F5F5F5;
+  display: none;
 }
 
 .list-items:hover {
