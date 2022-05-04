@@ -57,13 +57,18 @@
   color: #FFF;
   width: 96%;
   align-self: center;
+  font-size: 1.1em;
+  padding: 4px 0px;
 }
 
 #cancel {
   background-color: grey;
   border-radius: 5px;
   margin-bottom: 10px;
-  width: 100%;
+  color: #FFF;
+  width: 96%;
+  font-size: 1.1em;
+  padding: 4px 0px;
 }
 
 .settings-button {
@@ -146,6 +151,22 @@
 .form-area {
   height: 140px;
   margin-bottom: 15px;
+}
+
+.toggle,
+#timezone,
+.settings-button {
+  align-self: center;
+  width: 93%;
+}
+
+#timezone {
+  align-self: center;
+  background-color: #F5F5F5;
+  border-color: #767676;
+  border-radius: 5px 5px 0 0;
+  margin: 5px 1px 12px 1px;
+  line-height: 3em;
 }
 
 .listSuggestions {
