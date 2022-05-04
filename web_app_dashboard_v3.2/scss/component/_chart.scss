@@ -9,6 +9,7 @@
     display: flex;
     flex-direction: column;
     border-bottom: 1px solid lightgrey;
+    margin-top: 20px;
 }
 
 .traffic-header {
@@ -17,20 +18,29 @@
     justify-content: center;
 }
 
+.traffic-header h3,
+.traffic-header ul,
+.daily h3,
+.mobile h3 {
+    margin: 0;
+    line-height: .9em;
+}
+
 .widget-container-full {
     position: relative;
-    height: 200px;
+    height: 160px;
     width: 300px;
     // padding: 0px;
-    // margin: 0px;
+    margin-top: 20px;
     // margin: auto;
 
 }
 
 .widget-container-half {
     position: relative;
-    height: 200px;
+    height: 180px;
     width: 300px;
+    margin-top: 20px;
 }
 
 // #traffic-chart {
@@ -45,9 +55,11 @@
 
 @media (min-width: 768px) {
     .widget-container-full {
-        width: 600px;
-        height: 280px;
-        margin-left: 50px;
+        width: 80vw;
+    }
+
+    .widget-container-half {
+        width: 40vw;
     }
 
 }

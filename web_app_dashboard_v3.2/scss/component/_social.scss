@@ -1,3 +1,10 @@
+
+.social-stats h3 {
+    padding: 0px 10px; 
+    margin: 10;
+    line-height: .9em;
+}
+
 .social {
     display: flex;
     flex-direction: column;
@@ -30,8 +37,8 @@
 
 .social-image {
     display: block;
-    width: 15%;
-    height: 15%;
+    width: 25%;
+    height: 25%;
     padding: 12px 22px 12px 12px;
     overflow: visible;
 }

@@ -1,6 +1,7 @@
 @charset "UTF-8";
 * {
   font-family: "Mallanna", sans-serif;
+  box-sizing: border-box;
 }
 
 .traffic-nav {
@@ -54,7 +55,8 @@
   border-radius: 5px;
   margin-bottom: 10px;
   color: #FFF;
-  width: 100%;
+  width: 90%;
+  align-self: center;
 }
 
 #cancel {
@@ -78,6 +80,7 @@
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid lightgrey;
+  margin-top: 20px;
 }
 
 .traffic-header {
@@ -86,23 +89,35 @@
   justify-content: center;
 }
 
+.traffic-header h3,
+.traffic-header ul,
+.daily h3,
+.mobile h3 {
+  margin: 0;
+  line-height: 0.9em;
+}
+
 .widget-container-full {
   position: relative;
-  height: 200px;
+  height: 160px;
   width: 300px;
+  margin-top: 20px;
 }
 
 .widget-container-half {
   position: relative;
-  height: 200px;
+  height: 180px;
   width: 300px;
+  margin-top: 20px;
 }
 
 @media (min-width: 768px) {
   .widget-container-full {
-    width: 600px;
-    height: 280px;
-    margin-left: 50px;
+    width: 80vw;
+  }
+
+  .widget-container-half {
+    width: 40vw;
   }
 }
 .widget-container,
@@ -111,24 +126,36 @@
   flex-direction: column;
 }
 
-.form-area {
-  height: 100px;
+.message h3 {
+  margin: 0;
+  padding: 0px 10px;
 }
 
 .form-field,
 .form-area {
+  align-self: center;
   background-color: #F5F5F5;
-  width: 95%;
+  width: 90%;
   border-color: #767676;
   border-radius: 5px 5px 0 0;
-  padding-bottom: 20px;
   margin: 5px 1px 3px 1px;
+  line-height: 3em;
+}
+
+.form-area {
+  height: 140px;
+  margin-bottom: 15px;
+}
+
+#send-message {
+  margin: 10px;
 }
 
 .listSuggestions {
   list-style: none;
   margin: -0.15rem 1px 10px 0px;
-  width: 95%;
+  align-self: center;
+  width: 90%;
   border: 1px solid #767676;
   border-radius: 0 0 5px 5px;
   padding-left: 5px;
@@ -144,6 +171,13 @@
   justify-content: space-around;
 }
 
+#bell-icon,
+.profile-image {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
 .header {
   display: grid;
   grid-template-columns: 1fr repeat(4, auto);
@@ -153,7 +187,6 @@
   min-width: 100%;
   max-height: 50px;
   margin: 0px;
-  padding: 0px 10px;
   align-content: center;
 }
 
@@ -162,17 +195,9 @@
   padding-left: 10px;
 }
 
-.my-name {
-  padding-right: 10px;
-}
-
 .profile-image,
 .bell {
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
   align-self: center;
-  padding: 0px 10px 0px 10px;
 }
 
 .bell {
@@ -180,6 +205,7 @@
   flex-direction: row;
   border-right: 0.1px solid #dedede;
   border-radius: 0px;
+  margin-right: 5px;
 }
 .bell :hover {
   background-color: #c9d6ff;
@@ -192,6 +218,7 @@
   background-color: limegreen;
   width: 0.5rem;
   height: 0.5rem;
+  margin-right: 10px;
   border-radius: 50%;
 }
 
@@ -253,6 +280,7 @@
   width: 40%;
   height: 40%;
   stroke: white;
+  align-content: center;
 }
 
 .main-header {
@@ -260,7 +288,7 @@
   flex-direction: row;
   height: auto;
   min-width: 100%;
-  padding: 0px 5px;
+  padding-left: 15px;
   margin: 0px;
   justify-content: space-between;
   align-items: center;
@@ -285,8 +313,8 @@
   justify-self: center;
   justify-content: stretch;
   color: white;
-  width: 95%;
-  margin: 10px 0px;
+  width: 100%;
+  margin-top: 10px;
 }
 
 .alert-banner {
@@ -296,28 +324,15 @@
   align-content: center;
   width: 95%;
   padding: 0px 8px;
-  margin: 0px;
+  margin: auto;
   line-height: 0.8em;
   border-radius: 3px;
 }
 
 @media (min-width: 768px) {
-  .header {
-    max-width: 100%;
-  }
-
-  .site-name {
-    padding-left: 40px;
-  }
-
-  .my-name {
-    padding-right: 20px;
-  }
-
   .sidebar-nav {
     flex-direction: column;
     max-height: 100%;
-    width: 80px;
     justify-content: start;
     justify-items: center;
     align-content: center;
@@ -357,7 +372,7 @@
 }
 .grid-container {
   height: 100vh;
-  width: 100%;
+  min-width: 100%;
   margin: 0px;
   display: grid;
   grid-template-columns: 100%;
@@ -381,7 +396,7 @@
 @media (min-width: 768px) {
   .grid-container {
     grid-template-columns: 80px 1fr;
-    grid-template-areas: "header header" "nav main" "nav main";
+    grid-template-areas: "header header" "nav main";
   }
 
   .main {
@@ -411,6 +426,12 @@
     grid-template-areas: "header header header" "nav main main" "nav main main";
   }
 }
+.social-stats h3 {
+  padding: 0px 10px;
+  margin: 10;
+  line-height: 0.9em;
+}
+
 .social {
   display: flex;
   flex-direction: column;
@@ -442,8 +463,8 @@
 
 .social-image {
   display: block;
-  width: 15%;
-  height: 15%;
+  width: 25%;
+  height: 25%;
   padding: 12px 22px 12px 12px;
   overflow: visible;
 }
@@ -456,6 +477,7 @@
 .members h3,
 .activity h3 {
   margin: 0;
+  padding: 0px 10px;
 }
 
 .members-container,

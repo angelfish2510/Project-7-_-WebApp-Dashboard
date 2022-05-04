@@ -4,31 +4,39 @@
     flex-direction: column;
 }
 
-.form-area {
-    height: 100px;
-}
 
-// .form-field {
-//     height: 20px;
-//     font-size: .8em;
-//     line-height: .2em;
-// }
+
+.message h3 {
+    margin: 0;
+    padding: 0px 10px;
+}
 
 .form-field,
 .form-area {
+    align-self: center;
     background-color: #F5F5F5;
-    width: 95%;
+    width: 90%;
     border-color: rgb(118, 118, 118);
     border-radius: 5px 5px 0 0;
-    padding-bottom: 20px;
     margin: 5px 1px 3px 1px;
+    line-height: 3em;
+}
+
+.form-area {
+    height: 140px;
+    margin-bottom: 15px;
+}
+
+#send-message {
+    margin: 10px;
 }
 
 
 .listSuggestions {
     list-style: none;
     margin: -.15rem 1px 10px 0px;
-    width: 95%;
+    align-self: center;
+    width: 90%;
     border: 1px solid rgb(118, 118, 118);
     border-radius: 0 0 5px 5px;
     padding-left: 5px;
