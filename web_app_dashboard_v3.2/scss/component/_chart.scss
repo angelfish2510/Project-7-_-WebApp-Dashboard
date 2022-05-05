@@ -9,7 +9,7 @@
     display: flex;
     flex-direction: column;
     border-bottom: 1px solid lightgrey;
-    margin-top: 20px;
+    // margin-top: 20px;
 }
 
 .traffic-header {
@@ -22,7 +22,7 @@
 .traffic-header ul,
 .daily h3,
 .mobile h3 {
-    margin: 0;
+    margin-top: 20px;
     line-height: .9em;
 }
 
@@ -30,10 +30,7 @@
     position: relative;
     height: 160px;
     width: 300px;
-    // padding: 0px;
     margin-top: 20px;
-    // margin: auto;
-
 }
 
 .widget-container-half {
@@ -55,11 +52,23 @@
 
 @media (min-width: 768px) {
     .widget-container-full {
-        width: 80vw;
+        width: 85vw;
+        height: 40vh;
+    }
+
+    .traffic-header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
     }
 
     .widget-container-half {
         width: 40vw;
     }
+
+    .daily {
+        border-right: 1px solid lightgrey;
+    }
+
 
 }
