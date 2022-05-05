@@ -37,7 +37,7 @@
     position: relative;
     height: 180px;
     width: 300px;
-    margin-top: 20px;
+    // margin-top: 20px;
 }
 
 // #traffic-chart {
@@ -52,8 +52,8 @@
 
 @media (min-width: 768px) {
     .widget-container-full {
-        width: 85vw;
-        height: 40vh;
+        width: 90vw;
+        height: 42vh;
     }
 
     .traffic-header {
@@ -63,7 +63,8 @@
     }
 
     .widget-container-half {
-        width: 40vw;
+        width: 44vw;
+        height: 22vh;
     }
 
     .daily {
@@ -71,4 +72,16 @@
     }
 
 
+}
+
+@media (min-width: 1024px) {
+    .widget-container-full {
+        width: 92vw;
+        height: 58vh;
+    }
+
+    .widget-container-half {
+        width: 40vw;
+        height: 28vh;
+    }
 }
