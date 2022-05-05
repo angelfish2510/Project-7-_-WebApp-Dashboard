@@ -8,6 +8,7 @@ bellSVG.addEventListener('click', () => {
   if (show) {
     alertListUl.className = "activeAlert";
     show = false;
+    alert("Currently there are no alerts but stand by because this is a very active site!");
   } else {
     alertListUl.className = "activeAlert display-alerts";
     show = true;
@@ -20,15 +21,15 @@ let greenAlert = document.getElementById('green-alert');
 
 for (let i=0; i<alertClear.length; i++) {
   alertClear[i].addEventListener('click', (e) => {
-    let alert = e.target;
-    alert.parentNode.style.display = 'none';
+    let alertDetail = e.target;
+    alertDetail.parentNode.style.display = 'none';
     activeAlerts--;
     if (activeAlerts == 0) {
       greenAlert.style.display= 'none';
-      // alertBox.style.display = 'none';
     }
   });
 }
+
 
 // alert banner
 

@@ -140,7 +140,7 @@
 @media (min-width: 768px) {
   .widget-container-full {
     width: 90vw;
-    height: 42vh;
+    height: 42%;
   }
 
   .traffic-header {
@@ -151,7 +151,7 @@
 
   .widget-container-half {
     width: 44vw;
-    height: 22vh;
+    height: 22%;
   }
 
   .daily {
@@ -161,12 +161,12 @@
 @media (min-width: 1024px) {
   .widget-container-full {
     width: 92vw;
-    height: 58vh;
+    height: 58%;
   }
 
   .widget-container-half {
     width: 40vw;
-    height: 28vh;
+    height: 28%;
   }
 }
 .widget-container,
@@ -212,10 +212,16 @@
 }
 
 .settings {
-  border-top: 1px solid darkgrey;
+  border-top: 1px solid lightgrey;
   justify-content: space-around;
 }
 
+@media (min-width: 1024px) {
+  .message {
+    border-top: 1px solid lightgrey;
+    border-right: 1px solid lightgrey;
+  }
+}
 #bell-icon,
 .profile-image {
   width: 30px;
@@ -459,6 +465,21 @@
     grid-column: 1/span 2;
   }
 }
+@media (min-width: 1024px) {
+  .members,
+.message {
+    grid-column: 1/span 1;
+  }
+
+  .activity,
+.settings {
+    grid-column: 2/span 1;
+  }
+
+  .activity {
+    margin-top: 8px;
+  }
+}
 .social-stats h3 {
   padding: 0px 10px;
   margin: 10;
@@ -555,6 +576,10 @@
   line-height: 0.9em;
 }
 
+.border1024 {
+  display: none;
+}
+
 .members-container img,
 .activity-container img {
   border-radius: 50%;
@@ -565,11 +590,6 @@
 .members-text,
 .activity-text {
   padding-top: 4px;
-}
-
-.joinDate,
-.recent {
-  padding-bottom: 8px;
 }
 
 .members-text,
@@ -626,6 +646,36 @@
 .activityGreaterThan {
     position: absolute;
     right: 10px;
+  }
+}
+@media (min-width: 1024px) {
+  .activity {
+    border-top: 1px solid lightgrey;
+    border-left: 1px solid lightgrey;
+  }
+
+  .members-container img,
+.activity-container img {
+    width: 9%;
+  }
+
+  .members-container,
+.activity-container {
+    border-bottom: none;
+  }
+
+  .joinDate,
+.activityGreaterThan {
+    display: inline-block;
+  }
+
+  .border1024 {
+    display: block;
+    height: 1px;
+    width: 95%;
+    border-bottom: 1px solid lightgrey;
+    margin: 0 auto;
+    padding: 4px 0px;
   }
 }
 /*

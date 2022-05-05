@@ -56,6 +56,14 @@
 }
 
 .settings {
-    border-top:  1px solid darkgrey;
+    border-top:  1px solid lightgrey;
     justify-content: space-around;
+}
+
+
+@media (min-width: 1024px) {
+    .message {
+        border-top:  1px solid lightgrey;
+        border-right: 1px solid lightgrey;
+    }
 }
