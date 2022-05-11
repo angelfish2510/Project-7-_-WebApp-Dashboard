@@ -167,6 +167,7 @@
   .widget-container-half {
     width: 40vw;
     height: 28%;
+    padding-bottom: 30px;
   }
 }
 .widget-container,
@@ -227,6 +228,41 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
+}
+
+@keyframes wiggle {
+  20% {
+    transform: rotate(45deg) scale(0);
+  }
+  40% {
+    transform: rotate(-45deg) scale(1.1);
+  }
+  60% {
+    transform: rotate(30deg) scale(0.9);
+  }
+  80% {
+    transform: rotate(-30deg) scale 1;
+  }
+}
+#bell-icon:hover {
+  animation: wiggle 1.4s ease-out backwards;
+  animation-delay: 0.1s;
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(0);
+  }
+  30% {
+    transform: scale(1.6);
+  }
+  60% {
+    transform: scale(1);
+  }
+}
+.profile-image:hover {
+  animation: grow 3s ease-out;
+  animation-delay: 0.1s;
 }
 
 .header {
@@ -482,7 +518,7 @@
 }
 .social-stats h3 {
   padding: 0px 10px;
-  margin: 10;
+  margin: 10px 0px 0px 0px;
   line-height: 0.9em;
 }
 
@@ -497,7 +533,7 @@
   border-radius: 5px;
   height: 75px;
   padding: 3px;
-  margin: 3px;
+  margin: 10px;
   align-items: flex-start;
   background-color: #F5F5F5;
   line-height: 0em;
@@ -573,7 +609,7 @@
   padding: 15px 0px 5px 0px;
   overflow: visible;
   font-size: 0.8em;
-  line-height: 0.9em;
+  line-height: 0.1em;
 }
 
 .border1024 {
@@ -590,18 +626,16 @@
 .members-text,
 .activity-text {
   padding-top: 4px;
-}
-
-.members-text,
-.activity-text {
   text-align: center;
 }
 
-.members-container p,
-.members-text p,
-.activity-text p,
-.recent {
-  margin: 0px;
+.activity-text p:first-child {
+  margin-bottom: 4px;
+  line-height: 1em;
+}
+
+.activity-text p:nth-child(2) {
+  margin-top: 0px;
 }
 
 .activity-text {
@@ -623,7 +657,7 @@
 .activity-container {
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     padding-left: 10px;
   }
 
@@ -644,8 +678,8 @@
 
   .joinDate,
 .activityGreaterThan {
-    position: absolute;
-    right: 10px;
+    margin-left: auto;
+    padding-right: 10px;
   }
 }
 @media (min-width: 1024px) {
@@ -667,6 +701,10 @@
   .joinDate,
 .activityGreaterThan {
     display: inline-block;
+  }
+
+  .activity-text p:first-child {
+    line-height: 2em;
   }
 
   .border1024 {
