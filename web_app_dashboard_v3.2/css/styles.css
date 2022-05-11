@@ -1158,7 +1158,8 @@
     opacity: 1;
     color: #fff;
     padding-right: 0rem;
-    margin-left: -2rem;
+    margin-left: -25px;
+    margin-top: -2px;
   }
 
   .switch-ios.switch-toggle {
