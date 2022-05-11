@@ -101,6 +101,16 @@
     width: 96.5%;
   }
 }
+@media (min-width: 1024px) {
+  #timezone {
+    margin-top: 75px;
+  }
+
+  .settings-button {
+    margin-bottom: 0;
+    margin-top: auto;
+  }
+}
 .traffic,
 .daily,
 .mobile {
@@ -218,9 +228,12 @@
 }
 
 @media (min-width: 1024px) {
+  .settings {
+    border-left: 1px solid lightgrey;
+  }
+
   .message {
     border-top: 1px solid lightgrey;
-    border-right: 1px solid lightgrey;
   }
 }
 #bell-icon,
@@ -690,12 +703,14 @@
 
   .members-container img,
 .activity-container img {
-    width: 9%;
+    height: 65px;
+    width: auto;
   }
 
   .members-container,
 .activity-container {
     border-bottom: none;
+    height: 100px;
   }
 
   .joinDate,

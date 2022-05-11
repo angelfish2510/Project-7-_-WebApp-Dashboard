@@ -62,8 +62,11 @@
 
 
 @media (min-width: 1024px) {
+    .settings {
+        border-left: 1px solid lightgrey;
+    }
+
     .message {
         border-top:  1px solid lightgrey;
-        border-right: 1px solid lightgrey;
     }
 }

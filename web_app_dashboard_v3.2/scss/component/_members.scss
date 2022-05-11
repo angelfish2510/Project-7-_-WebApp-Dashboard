@@ -139,7 +139,8 @@
 
     .members-container img,
     .activity-container img {
-        width: 9%;
+        height: 65px;
+        width: auto;
     }
 
     // .members-container {
@@ -149,6 +150,7 @@
     .members-container,
     .activity-container {
         border-bottom: none;
+        height: 100px;
     }
 
     .joinDate,
