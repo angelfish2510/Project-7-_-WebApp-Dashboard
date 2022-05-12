@@ -254,7 +254,7 @@
     transform: rotate(30deg) scale(0.9);
   }
   80% {
-    transform: rotate(-30deg) scale 1;
+    transform: rotate(-30deg) scale(1);
   }
 }
 #bell-icon:hover {
@@ -291,7 +291,6 @@
 }
 
 .site-name {
-  grid-column-start: 0;
   padding-left: 10px;
 }
 
@@ -314,7 +313,6 @@
 }
 
 #green-alert {
-  position: 1;
   background-color: limegreen;
   width: 0.5rem;
   height: 0.5rem;
