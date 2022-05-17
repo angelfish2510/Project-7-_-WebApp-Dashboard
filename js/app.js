@@ -511,11 +511,11 @@ saveButton.addEventListener('click', (e) => {
   alert("Your settings are saved and ready for your return!  Come back soon!")
 });
 
-cancelButton.addEventListener('click', (e) => {
-  e.preventDefault();
-  localStorage.clear();
-  emailToggle.checked = false;
-  publicToggle.checked = false;
-  timezoneSet.value = timezoneDefault.innerHTML;
-  alert("Your settings have been cancelled.  It's like you were never here and have no opinions on the matter. :)")
-});
+// cancelButton.addEventListener('click', (e) => {
+//   e.preventDefault();
+//   localStorage.clear();
+//   emailToggle.checked = false;
+//   publicToggle.checked = false;
+//   timezoneSet.value = timezoneDefault.innerHTML;
+//   alert("Your settings have been cancelled.  It's like you were never here and have no opinions on the matter. :)")
+// });
