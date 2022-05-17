@@ -316,12 +316,13 @@
 
 .activeAlert {
   position: absolute;
+  right: 0px;
   background-color: #e2e1f7;
   transform-origin: top left;
   opacity: 0;
   max-height: 0px;
   overflow: hidden;
-  top: 90px;
+  top: 30px;
   border-radius: 5px;
   padding-left: 15px;
 }
@@ -536,61 +537,67 @@
   display: flex;
   border: 1px solid darkgrey;
   border-radius: 5px;
-  height: 75px;
-  padding: 3px;
-  margin: 10px;
-  align-items: flex-start;
+  margin: 10px 15px;
+  align-items: center;
   background-color: #F5F5F5;
-  line-height: 0em;
+  line-height: 1.6em;
+}
+
+.social-text {
+  margin: auto;
+  padding-left: 5px;
+  padding-bottom: 5px;
+  flex-basis: 90%;
 }
 
 .social-type {
   color: #7477BF;
+  margin: 0px;
   font-size: 1.2em;
-  padding: 0;
+  padding: 0px;
+  font-weight: 500;
 }
 
 .social-number {
   color: gray;
-  font-size: 2.1em;
-  padding: 0;
+  font-size: 2.3em;
+  margin: 0px;
+  padding: 0px;
 }
 
 .social-image {
-  display: block;
-  width: 25%;
-  height: 25%;
-  padding: 12px 22px 12px 12px;
+  padding: 5px 12px 0px 12px;
+}
+
+.fb,
+.insta,
+.twitter {
+  display: flex;
+  background-color: #7477BF;
+  border-radius: 50%;
+  padding: 15px;
+  margin: 8px 1px;
+  fill: white;
   overflow: visible;
+  width: 55px;
+  height: 55px;
 }
 
 @media (min-width: 768px) {
   .social {
     flex-direction: row;
-    min-width: 100%;
+    margin-left: 12px;
+    margin-right: 12px;
   }
 
   .social-container {
     flex: 1;
-    justify-content: space-evenly;
-    padding-top: 10px;
+    margin: 10px 4px;
   }
 
   .social-type,
 .social-number {
-    line-height: 1em;
     margin: 0px;
-  }
-
-  .social-image {
-    padding: 0px;
-    flex: 1;
-    max-width: 80px;
-  }
-
-  .social-image svg {
-    max-width: 55px;
-    margin-left: 15px;
   }
 }
 .members {

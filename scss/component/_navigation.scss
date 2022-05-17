@@ -47,12 +47,13 @@
   
   .activeAlert {
     position: absolute;
+    right: 0px;
     background-color: #e2e1f7;
     transform-origin: top left;
     opacity: 0;
     max-height: 0px;
     overflow: hidden;
-    top: 90px;
+    top: 30px;
     border-radius: 5px;
     padding-left: 15px;
   }
