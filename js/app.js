@@ -482,6 +482,7 @@ form.addEventListener('submit', (e) => {
 const emailToggle = document.querySelector('#toggleEmail');
 const publicToggle = document.querySelector('#togglePublic');
 const timezoneSet = document.querySelector('#timezone');
+const timezoneDefault = document.querySelector('.notimezone');
 const saveButton = document.querySelector('#save');
 const cancelButton = document.querySelector('#cancel');
 let localStorage = window.localStorage;
@@ -515,6 +516,6 @@ cancelButton.addEventListener('click', (e) => {
   localStorage.clear();
   emailToggle.checked = false;
   publicToggle.checked = false;
-  timezoneSet.value = null;
+  timezoneSet.value = timezoneDefault.innerHTML;
   alert("Your settings have been cancelled.  It's like you were never here and have no opinions on the matter. :)")
 });
