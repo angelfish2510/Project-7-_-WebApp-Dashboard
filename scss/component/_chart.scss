@@ -1,6 +1,3 @@
-// canvas {
-//     max-width: 100%;
-// }
 
 .traffic,
 .daily,
@@ -9,7 +6,6 @@
     display: flex;
     flex-direction: column;
     border-bottom: 1px solid lightgrey;
-    // margin-top: 20px;
 }
 
 .traffic-header {
@@ -35,26 +31,10 @@
     padding-bottom: 10px;
 }
 
-// .widget-container-half {
-//     position: relative;
-//     height: 180px;
-//     width: 300px;
-//     // margin-top: 20px;
-// }
-
-// #traffic-chart {
-//     // position: absolute;
-//     // margin: auto;
-//     // height: 300px;
-//     // width: 250px;
-//     // margin-left: -40px;
-
-//   }
 
 
 @media (min-width: 768px) {
     .widget-container-full {
-        // width: 97%;
         height: 42%;
     }
 
@@ -65,7 +45,6 @@
     }
 
     .widget-container-half {
-        // width: 97%;
         height: 22%;
     }
 

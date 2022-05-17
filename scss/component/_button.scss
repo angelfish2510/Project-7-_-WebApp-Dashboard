@@ -1,4 +1,4 @@
-// .traffic-header,
+
 .traffic-nav {
     display: flex;
     justify-content: space-around;
@@ -11,14 +11,6 @@
     list-style-type: none;
 }
 
-// .hourly_btn,
-// .daily_btn,
-// .weekly_btn,
-// .monthly_btn {
-//     border: none;
-//     background-color: white;
-//     font-size: 1.2em;
-// }
 
 .traffic-nav-link {
     border: none;
@@ -33,28 +25,11 @@
     color: white;
 }
 
-  
-// .settings {
-//     display: flex;
-// }
-
-// .toggle {
-//     display: flex;
-//     flex-direction: row;
-//     margin: auto;
-//     max-width: 100%;
-//     align-items: center;
-//     // overflow: visible;
-//     // justify-content: space-between;
-//     // max-width: 320px;
-// }
-
 .switch-light.switch-ios {
     display: flex;
     width: 100%;
     min-width: 100%;
     align-items: center;
-    // justify-content: stretch;
     margin-bottom: 20px;
 }
 
@@ -70,13 +45,6 @@
     flex-basis: 200px;
 }
 
-
-// #toggleEmail,
-// #togglePublic {
-//     display: flex;
-//     flex-direction: row;
-// }
-
 .toggle,
 #timezone,
 .settings-button {
@@ -84,7 +52,6 @@
     width: 93%;
 }
 
-// 
 
 
 

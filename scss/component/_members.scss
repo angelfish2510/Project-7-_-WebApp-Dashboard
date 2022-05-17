@@ -18,9 +18,7 @@
     align-items: center;
     justify-content: center;
     border-bottom: 1px solid lightgrey;
-    // height: 75px;
     padding: 15px 0px 5px 0px;
-    // margin: 3px;
     overflow: visible;
     font-size: .8em;
     line-height: .1em;
@@ -30,30 +28,11 @@
     display: none;
 }
 
-// .members-container:after,
-// .activity-container:after {
-//     display: block;
-//     // clear: both;
-//     content: "";
-//     // flex-wrap: wrap;
-//     position: relative;
-//     // left: 0;
-//     // bottom: 0;
-//     // max-width: 480px;
-//     height: 1px;
-//     width: 100%;
-//     border-bottom: 1px solid lightgrey;
-//     margin: 0 auto;
-//     padding: 4px 0px;
-
-// }
-
 .members-container img,
 .activity-container img {
     border-radius: 50%;
     width: 15%;
     height: 15%;
-    // padding: 8px 0px 1px 0px;
 }
 
 .members-text,
@@ -61,11 +40,6 @@
     padding-top: 4px;
     text-align: center;
 }
-
-// .joinDate,
-// .recent {
-//     padding-bottom: 8px;
-// }
 
 
 .activity-text p:first-child {
@@ -133,20 +107,11 @@
         border-left: 1px solid lightgrey;
     }
 
-    // .joinDate {
-    //     align-self: flex-start;
-
-    // }
-
     .members-container img,
     .activity-container img {
         height: 65px;
         width: auto;
     }
-
-    // .members-container {
-    //     width: 471.5px;
-    // }
 
     .members-container,
     .activity-container {
@@ -160,9 +125,8 @@
     }
 
     .activity-text p:first-child {
-            // margin-bottom: 0px;
-            line-height: 2em;
-        }
+        line-height: 2em;
+    }
 
 .border1024 {
     display: block;
@@ -171,12 +135,6 @@
     border-bottom: 1px solid lightgrey;
     margin: 0 auto;
     padding: 4px 0px;
-
-}
-
-       
-    // .members div:last-of-type,
-    // .activity div:last-of-type {
-    //     border-bottom: none;
-    // }
+    }
+   
 }
