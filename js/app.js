@@ -513,5 +513,8 @@ saveButton.addEventListener('click', (e) => {
 cancelButton.addEventListener('click', (e) => {
   e.preventDefault();
   localStorage.clear();
+  emailToggle.checked = false;
+  publicToggle.checked = false;
+  timezoneSet.value = null;
   alert("Your settings have been cancelled.  It's like you were never here and have no opinions on the matter. :)")
 });
